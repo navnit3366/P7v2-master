@@ -1,0 +1,29 @@
+@use "universal"
+
+#chat_window
+    grid-area: b
+    height: 100%
+    width: 100%
+    background-color: universal.$chat_background_color
+    padding: 7px 15px
+
+    @media (max-width: universal.$mobile_breakpoint)
+        padding: 0
+
+#dialogue_container
+    height: 100%
+    width: 100%
+
+#dialogue_area
+    height: calc(100% - var(--input_container_height))
+    width: 100%
+    overflow: auto
+    background-color: universal.$app_background_color
+    padding: 0px 22px
+    border-top: 10px solid universal.$app_background_color
+    border-radius: 10px 10px 0px 0px
+
+    @media (max-width: universal.$mobile_breakpoint)
+        padding: 0px 25px
+        border-radius: 0
+

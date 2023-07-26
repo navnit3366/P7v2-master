@@ -1,0 +1,43 @@
+@use "universal"
+
+*
+    box-sizing: border-box
+
+@font-face
+    font-family: fb-krungthep
+    src: url("../fonts/krungthep.ttf") format("truetype")
+
+html
+    height: 100vh
+    width: 100vw
+    z-index: 1
+
+body
+    position: fixed
+    top: 0px
+    left: 0px
+    z-index: 10
+    height: 100%
+    width: 100%
+    font-family: krungthep, fb-krungthep
+    font-size: universal.$message_font_size
+    color: universal.$app_text_color
+    overflow: hidden
+    margin: 0px
+
+a
+    color: universal.$app_text_color
+    text-decoration: none
+
+.my_container
+    display: grid
+    grid-template-columns: 20% 80%
+    grid-template-rows: 1fr 250px
+    grid-template-areas: "a b" "c b"
+    height: 100%
+    width: 100%
+
+    @media (max-width: universal.$mobile_breakpoint)
+        grid-template-columns: 100%
+        grid-template-rows: 55px calc(100% - 55px)
+        grid-template-areas: "a" "b"

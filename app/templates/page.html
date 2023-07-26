@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <link rel="icon" type="image/png" href={{ url_for('static', filename='legacy/img/robot-face.png') }} />
+        <title>P7v2 - GrandPyBot 1st Anniversary Remake</title>
+    </head>
+    <body>
+        <div class="my_container">
+            <header>
+                <nav id="brand">
+                    <span id="brand_logo"><span>🤖 </span><a href="#">GrandPy</a></span>
+                </nav>
+            </header>
+            <section id="chat_window">
+                <section id="dialogue_container">
+                    <article id="dialogue_area">
+                    </article>
+                    <form method="post" action="" novalidate id="input_container">
+                        {{ form.hidden_tag() }}
+                        {{ form.textarea(class="", id="input_area", placeholder="Nouveau message") }}
+                        <button id="submit_button">
+                            <i class="fa fa-envelope" id="envelope" aria-hidden="true"></i>
+                        </button>
+                    </form>
+                </section>
+            </section>
+            <footer>
+                <div id="footer_text">
+                    2019, 2020 — Créé par Jeffrey G.<br/>pour OpenClassrooms
+                </div>
+                <div id="footer_sns">
+                    <a href="https://github.com/Ludophilia/P7v2" target="_blank">
+                        <img src="{{ url_for('static', filename='legacy/img/GitHub-Mark-Light-32px.png') }}" alt="Octocat" width="25" height="25"/>
+                    </a>
+                </div>
+            </footer>
+        </div>
+        <script defer src="https://maps.googleapis.com/maps/api/js?key={{ gm_api_key }}" async></script>
+        <script defer src="static/dist/bundle.js"></script> 
+        <script defer src="https://use.fontawesome.com/{{ fa_key }}.js"></script>
+    </body>
+</html>

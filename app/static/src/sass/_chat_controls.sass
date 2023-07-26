@@ -1,0 +1,62 @@
+@use "universal"
+
+:root
+    --input_container_height: #{20px + 2 * 20px}
+    --input_area_width: 82%
+
+    @media (max-width: universal.$mobile_breakpoint)
+        --input_container_height: #{20px + 2 * 15px}
+        --input_area_width: 75%
+    
+#input_container
+    display: flex
+    height: var(--input_container_height)
+    width: 100%
+
+#input_area
+    resize: none
+    border: none
+    margin: 0
+    flex-basis: var(--input_area_width)
+    font-size: universal.$message_font_size
+    font-family: Verdana
+    color: universal.$app_text_color
+    background-color: universal.$input_background_color
+    padding: 20px 30px
+    border-radius: 0px 0px 0px 10px
+    transition: border, box-shadow 1500ms ease-out
+
+    @media (max-width: universal.$mobile_breakpoint)
+        padding: 15px 25px
+        border-radius: 0
+
+    &:focus
+        outline: none
+        border: 1px solid universal.$input_outline_color
+        box-shadow: 0px 0 5px universal.$input_outline_color
+
+#submit_button
+    --webkit-appearance: none
+    border: none
+    margin: 0
+    padding: 0
+    display: flex
+    flex-basis: calc(100% - var(--input_area_width))
+    color: universal.$submit_button_secondary_color
+    background-color: universal.$submit_button_main_color
+    border-radius: 0px 0px 10px 0px
+
+    &:focus
+        outline: none
+    
+    @media (max-width: universal.$mobile_breakpoint)
+        border-radius: 0
+
+    @media (pointer: fine)
+        &:hover    
+            color: universal.$submit_button_main_color
+            background-color: universal.$submit_button_secondary_color
+
+#envelope
+    font-size: 25px
+    margin: auto
